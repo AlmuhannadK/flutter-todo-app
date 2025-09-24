@@ -2,8 +2,8 @@
 
 import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:todo_app/domain/todo.dart';
-import 'package:todo_app/domain/todo_repository.dart';
+import 'package:todo_app/features/todo/domain/todo.dart';
+import 'package:todo_app/features/todo/domain/todo_repository.dart';
 
 class TodoCubit extends Cubit<List<Todo>> {
   // ref to repository

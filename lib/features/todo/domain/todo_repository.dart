@@ -1,5 +1,5 @@
 // CRUD operations for todo items
-import 'package:todo_app/domain/todo.dart';
+import 'package:todo_app/features/todo/domain/todo.dart';
 
 abstract class TodoRepository {
   // get
