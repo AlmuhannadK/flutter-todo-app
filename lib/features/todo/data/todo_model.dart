@@ -19,6 +19,8 @@ class TodoModel {
   }
 
   static TodoModel fromDomain(Todo todo) {
+    // note: this (..) is cascade operator which allows for multiple operations on the same object
+    // equivalent to todoModel.id, todoModel.description = desc
     return TodoModel()
       ..id = todo.id
       ..description = todo.description
