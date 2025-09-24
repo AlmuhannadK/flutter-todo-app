@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'todo_entity.dart';
+part of 'todo_model.dart';
 
 // **************************************************************************
 // IsarCollectionGenerator
@@ -9,13 +9,13 @@ part of 'todo_entity.dart';
 // coverage:ignore-file
 // ignore_for_file: duplicate_ignore, non_constant_identifier_names, constant_identifier_names, invalid_use_of_protected_member, unnecessary_cast, prefer_const_constructors, lines_longer_than_80_chars, require_trailing_commas, inference_failure_on_function_invocation, unnecessary_parenthesis, unnecessary_raw_strings, unnecessary_null_checks, join_return_with_assignment, prefer_final_locals, avoid_js_rounded_ints, avoid_positional_boolean_parameters, always_specify_types
 
-extension GetTodoEntityCollection on Isar {
-  IsarCollection<TodoEntity> get todoEntitys => this.collection();
+extension GetTodoModelCollection on Isar {
+  IsarCollection<TodoModel> get todoModels => this.collection();
 }
 
-const TodoEntitySchema = CollectionSchema(
-  name: r'TodoEntity',
-  id: -5831862288383718631,
+const TodoModelSchema = CollectionSchema(
+  name: r'TodoModel',
+  id: 4924789365587537652,
   properties: {
     r'description': PropertySchema(
       id: 0,
@@ -28,22 +28,22 @@ const TodoEntitySchema = CollectionSchema(
       type: IsarType.bool,
     )
   },
-  estimateSize: _todoEntityEstimateSize,
-  serialize: _todoEntitySerialize,
-  deserialize: _todoEntityDeserialize,
-  deserializeProp: _todoEntityDeserializeProp,
+  estimateSize: _todoModelEstimateSize,
+  serialize: _todoModelSerialize,
+  deserialize: _todoModelDeserialize,
+  deserializeProp: _todoModelDeserializeProp,
   idName: r'id',
   indexes: {},
   links: {},
   embeddedSchemas: {},
-  getId: _todoEntityGetId,
-  getLinks: _todoEntityGetLinks,
-  attach: _todoEntityAttach,
+  getId: _todoModelGetId,
+  getLinks: _todoModelGetLinks,
+  attach: _todoModelAttach,
   version: '3.1.0+1',
 );
 
-int _todoEntityEstimateSize(
-  TodoEntity object,
+int _todoModelEstimateSize(
+  TodoModel object,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
@@ -52,8 +52,8 @@ int _todoEntityEstimateSize(
   return bytesCount;
 }
 
-void _todoEntitySerialize(
-  TodoEntity object,
+void _todoModelSerialize(
+  TodoModel object,
   IsarWriter writer,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
@@ -62,20 +62,20 @@ void _todoEntitySerialize(
   writer.writeBool(offsets[1], object.isCompleted);
 }
 
-TodoEntity _todoEntityDeserialize(
+TodoModel _todoModelDeserialize(
   Id id,
   IsarReader reader,
   List<int> offsets,
   Map<Type, List<int>> allOffsets,
 ) {
-  final object = TodoEntity();
+  final object = TodoModel();
   object.description = reader.readString(offsets[0]);
   object.id = id;
   object.isCompleted = reader.readBool(offsets[1]);
   return object;
 }
 
-P _todoEntityDeserializeProp<P>(
+P _todoModelDeserializeProp<P>(
   IsarReader reader,
   int propertyId,
   int offset,
@@ -91,30 +91,30 @@ P _todoEntityDeserializeProp<P>(
   }
 }
 
-Id _todoEntityGetId(TodoEntity object) {
+Id _todoModelGetId(TodoModel object) {
   return object.id;
 }
 
-List<IsarLinkBase<dynamic>> _todoEntityGetLinks(TodoEntity object) {
+List<IsarLinkBase<dynamic>> _todoModelGetLinks(TodoModel object) {
   return [];
 }
 
-void _todoEntityAttach(IsarCollection<dynamic> col, Id id, TodoEntity object) {
+void _todoModelAttach(IsarCollection<dynamic> col, Id id, TodoModel object) {
   object.id = id;
 }
 
-extension TodoEntityQueryWhereSort
-    on QueryBuilder<TodoEntity, TodoEntity, QWhere> {
-  QueryBuilder<TodoEntity, TodoEntity, QAfterWhere> anyId() {
+extension TodoModelQueryWhereSort
+    on QueryBuilder<TodoModel, TodoModel, QWhere> {
+  QueryBuilder<TodoModel, TodoModel, QAfterWhere> anyId() {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(const IdWhereClause.any());
     });
   }
 }
 
-extension TodoEntityQueryWhere
-    on QueryBuilder<TodoEntity, TodoEntity, QWhereClause> {
-  QueryBuilder<TodoEntity, TodoEntity, QAfterWhereClause> idEqualTo(Id id) {
+extension TodoModelQueryWhere
+    on QueryBuilder<TodoModel, TodoModel, QWhereClause> {
+  QueryBuilder<TodoModel, TodoModel, QAfterWhereClause> idEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(IdWhereClause.between(
         lower: id,
@@ -123,7 +123,7 @@ extension TodoEntityQueryWhere
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterWhereClause> idNotEqualTo(Id id) {
+  QueryBuilder<TodoModel, TodoModel, QAfterWhereClause> idNotEqualTo(Id id) {
     return QueryBuilder.apply(this, (query) {
       if (query.whereSort == Sort.asc) {
         return query
@@ -145,7 +145,7 @@ extension TodoEntityQueryWhere
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterWhereClause> idGreaterThan(Id id,
+  QueryBuilder<TodoModel, TodoModel, QAfterWhereClause> idGreaterThan(Id id,
       {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
@@ -154,7 +154,7 @@ extension TodoEntityQueryWhere
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterWhereClause> idLessThan(Id id,
+  QueryBuilder<TodoModel, TodoModel, QAfterWhereClause> idLessThan(Id id,
       {bool include = false}) {
     return QueryBuilder.apply(this, (query) {
       return query.addWhereClause(
@@ -163,7 +163,7 @@ extension TodoEntityQueryWhere
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterWhereClause> idBetween(
+  QueryBuilder<TodoModel, TodoModel, QAfterWhereClause> idBetween(
     Id lowerId,
     Id upperId, {
     bool includeLower = true,
@@ -180,10 +180,9 @@ extension TodoEntityQueryWhere
   }
 }
 
-extension TodoEntityQueryFilter
-    on QueryBuilder<TodoEntity, TodoEntity, QFilterCondition> {
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
-      descriptionEqualTo(
+extension TodoModelQueryFilter
+    on QueryBuilder<TodoModel, TodoModel, QFilterCondition> {
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> descriptionEqualTo(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -196,7 +195,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition>
       descriptionGreaterThan(
     String value, {
     bool include = false,
@@ -212,8 +211,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
-      descriptionLessThan(
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> descriptionLessThan(
     String value, {
     bool include = false,
     bool caseSensitive = true,
@@ -228,8 +226,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
-      descriptionBetween(
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> descriptionBetween(
     String lower,
     String upper, {
     bool includeLower = true,
@@ -248,7 +245,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition>
       descriptionStartsWith(
     String value, {
     bool caseSensitive = true,
@@ -262,8 +259,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
-      descriptionEndsWith(
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> descriptionEndsWith(
     String value, {
     bool caseSensitive = true,
   }) {
@@ -276,8 +272,9 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
-      descriptionContains(String value, {bool caseSensitive = true}) {
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> descriptionContains(
+      String value,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.contains(
         property: r'description',
@@ -287,8 +284,9 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
-      descriptionMatches(String pattern, {bool caseSensitive = true}) {
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> descriptionMatches(
+      String pattern,
+      {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.matches(
         property: r'description',
@@ -298,7 +296,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition>
       descriptionIsEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -308,7 +306,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition>
       descriptionIsNotEmpty() {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.greaterThan(
@@ -318,7 +316,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition> idEqualTo(
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> idEqualTo(
       Id value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
@@ -328,7 +326,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition> idGreaterThan(
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> idGreaterThan(
     Id value, {
     bool include = false,
   }) {
@@ -341,7 +339,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition> idLessThan(
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> idLessThan(
     Id value, {
     bool include = false,
   }) {
@@ -354,7 +352,7 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition> idBetween(
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> idBetween(
     Id lower,
     Id upper, {
     bool includeLower = true,
@@ -371,8 +369,8 @@ extension TodoEntityQueryFilter
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterFilterCondition>
-      isCompletedEqualTo(bool value) {
+  QueryBuilder<TodoModel, TodoModel, QAfterFilterCondition> isCompletedEqualTo(
+      bool value) {
     return QueryBuilder.apply(this, (query) {
       return query.addFilterCondition(FilterCondition.equalTo(
         property: r'isCompleted',
@@ -382,109 +380,108 @@ extension TodoEntityQueryFilter
   }
 }
 
-extension TodoEntityQueryObject
-    on QueryBuilder<TodoEntity, TodoEntity, QFilterCondition> {}
+extension TodoModelQueryObject
+    on QueryBuilder<TodoModel, TodoModel, QFilterCondition> {}
 
-extension TodoEntityQueryLinks
-    on QueryBuilder<TodoEntity, TodoEntity, QFilterCondition> {}
+extension TodoModelQueryLinks
+    on QueryBuilder<TodoModel, TodoModel, QFilterCondition> {}
 
-extension TodoEntityQuerySortBy
-    on QueryBuilder<TodoEntity, TodoEntity, QSortBy> {
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> sortByDescription() {
+extension TodoModelQuerySortBy on QueryBuilder<TodoModel, TodoModel, QSortBy> {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> sortByDescription() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'description', Sort.asc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> sortByDescriptionDesc() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> sortByDescriptionDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'description', Sort.desc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> sortByIsCompleted() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> sortByIsCompleted() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isCompleted', Sort.asc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> sortByIsCompletedDesc() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> sortByIsCompletedDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isCompleted', Sort.desc);
     });
   }
 }
 
-extension TodoEntityQuerySortThenBy
-    on QueryBuilder<TodoEntity, TodoEntity, QSortThenBy> {
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> thenByDescription() {
+extension TodoModelQuerySortThenBy
+    on QueryBuilder<TodoModel, TodoModel, QSortThenBy> {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> thenByDescription() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'description', Sort.asc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> thenByDescriptionDesc() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> thenByDescriptionDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'description', Sort.desc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> thenById() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> thenById() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.asc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> thenByIdDesc() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> thenByIdDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'id', Sort.desc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> thenByIsCompleted() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> thenByIsCompleted() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isCompleted', Sort.asc);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QAfterSortBy> thenByIsCompletedDesc() {
+  QueryBuilder<TodoModel, TodoModel, QAfterSortBy> thenByIsCompletedDesc() {
     return QueryBuilder.apply(this, (query) {
       return query.addSortBy(r'isCompleted', Sort.desc);
     });
   }
 }
 
-extension TodoEntityQueryWhereDistinct
-    on QueryBuilder<TodoEntity, TodoEntity, QDistinct> {
-  QueryBuilder<TodoEntity, TodoEntity, QDistinct> distinctByDescription(
+extension TodoModelQueryWhereDistinct
+    on QueryBuilder<TodoModel, TodoModel, QDistinct> {
+  QueryBuilder<TodoModel, TodoModel, QDistinct> distinctByDescription(
       {bool caseSensitive = true}) {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'description', caseSensitive: caseSensitive);
     });
   }
 
-  QueryBuilder<TodoEntity, TodoEntity, QDistinct> distinctByIsCompleted() {
+  QueryBuilder<TodoModel, TodoModel, QDistinct> distinctByIsCompleted() {
     return QueryBuilder.apply(this, (query) {
       return query.addDistinctBy(r'isCompleted');
     });
   }
 }
 
-extension TodoEntityQueryProperty
-    on QueryBuilder<TodoEntity, TodoEntity, QQueryProperty> {
-  QueryBuilder<TodoEntity, int, QQueryOperations> idProperty() {
+extension TodoModelQueryProperty
+    on QueryBuilder<TodoModel, TodoModel, QQueryProperty> {
+  QueryBuilder<TodoModel, int, QQueryOperations> idProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'id');
     });
   }
 
-  QueryBuilder<TodoEntity, String, QQueryOperations> descriptionProperty() {
+  QueryBuilder<TodoModel, String, QQueryOperations> descriptionProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'description');
     });
   }
 
-  QueryBuilder<TodoEntity, bool, QQueryOperations> isCompletedProperty() {
+  QueryBuilder<TodoModel, bool, QQueryOperations> isCompletedProperty() {
     return QueryBuilder.apply(this, (query) {
       return query.addPropertyName(r'isCompleted');
     });

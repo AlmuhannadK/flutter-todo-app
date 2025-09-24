@@ -4,10 +4,10 @@ import 'package:isar/isar.dart';
 import 'package:todo_app/domain/todo.dart';
 
 // generate isar todo object
-part 'todo_entity.g.dart';
+part 'todo_model.g.dart';
 
 @collection
-class TodoEntity {
+class TodoModel {
   Id id = Isar.autoIncrement; // auto increment id
   late String description;
   late bool isCompleted;
@@ -18,8 +18,8 @@ class TodoEntity {
     return Todo(id: id, description: description, isCompleted: isCompleted);
   }
 
-  static TodoEntity fromDomain(Todo todo) {
-    return TodoEntity()
+  static TodoModel fromDomain(Todo todo) {
+    return TodoModel()
       ..id = todo.id
       ..description = todo.description
       ..isCompleted = todo.isCompleted;

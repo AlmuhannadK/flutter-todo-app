@@ -1,13 +1,13 @@
 import 'package:isar/isar.dart';
-import 'package:todo_app/data/todo_entity.dart';
+import 'package:todo_app/data/todo_model.dart';
 import 'package:todo_app/domain/todo.dart';
 import 'package:todo_app/domain/todo_repository.dart';
 
-class TodoEntityRepository implements TodoRepository {
+class TodoRepositoryImpl implements TodoRepository {
   // database local storage
   final Isar db;
 
-  TodoEntityRepository(this.db);
+  TodoRepositoryImpl(this.db);
 
   // implementation of CRUD defined in domain
   // get
