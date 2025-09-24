@@ -1,7 +1,7 @@
 import 'package:isar/isar.dart';
-import 'package:todo_app/features/todo/data/todo_model.dart';
-import 'package:todo_app/features/todo/domain/todo.dart';
-import 'package:todo_app/features/todo/domain/todo_repository.dart';
+import 'package:todo_app/features/todo/data/models/todo_model.dart';
+import 'package:todo_app/features/todo/domain/entities/todo.dart';
+import 'package:todo_app/features/todo/domain/repositories/todo_repository.dart';
 
 class TodoRepositoryImpl implements TodoRepository {
   // database local storage

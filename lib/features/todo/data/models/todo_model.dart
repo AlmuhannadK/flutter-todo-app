@@ -1,7 +1,7 @@
 // local storage (isar) todo model
 
 import 'package:isar/isar.dart';
-import 'package:todo_app/features/todo/domain/todo.dart';
+import 'package:todo_app/features/todo/domain/entities/todo.dart';
 
 // generate isar todo object
 part 'todo_model.g.dart';
