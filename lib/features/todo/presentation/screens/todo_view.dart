@@ -3,7 +3,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:todo_app/features/todo/domain/entities/todo.dart';
-import 'package:todo_app/features/todo/presentation/bloc/todo_cubit.dart';
+import 'package:todo_app/features/todo/presentation/cubit/todo_cubit.dart';
+import 'package:todo_app/features/todo/presentation/cubit/todo_state.dart';
 
 class TodoView extends StatelessWidget {
   const TodoView({super.key});
@@ -53,27 +54,34 @@ class TodoView extends StatelessWidget {
       ),
 
       // bloc builder
-      body: BlocBuilder<TodoCubit, List<Todo>>(
-        builder: (context, todos) {
-          return ListView.builder(
-            itemCount: todos.length,
-            itemBuilder: (context, index) {
-              // get todo item
-              final todo = todos[index];
-              return ListTile(
-                title: Text(todo.description),
-                leading: Checkbox(
-                  value: todo.isCompleted,
-                  onChanged: (value) => todoCubit.toggleCompleted(todo),
-                ),
-
-                trailing: IconButton(
-                  icon: const Icon(Icons.cancel),
-                  onPressed: () => todoCubit.deleteTodo(todo.id),
-                ),
-              );
-            },
-          );
+      body: BlocBuilder<TodoCubit, TodoState>(
+        builder: (context, state) {
+          if (state is TodoInitial) {
+            return const Center(child: Text('No todos yet!'));
+          } else if (state is TodoLoading) {
+            return const Center(child: CircularProgressIndicator());
+          } else if (state is TodoLoaded) {
+            final todos = state.todos;
+            return ListView.builder(
+              itemCount: todos.length,
+              itemBuilder: (context, index) {
+                final todo = todos[index];
+                return ListTile(
+                  title: Text(todo.description),
+                  leading: Checkbox(
+                    value: todo.isCompleted,
+                    onChanged: (value) => todoCubit.toggleCompleted(todo),
+                  ),
+                  trailing: IconButton(
+                    icon: const Icon(Icons.cancel),
+                    onPressed: () => todoCubit.deleteTodo(todo.id),
+                  ),
+                );
+              },
+            );
+          } else {
+            return const Center(child: Text('Something went wrong!'));
+          }
         },
       ),
     );
