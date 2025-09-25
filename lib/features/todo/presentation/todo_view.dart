@@ -42,6 +42,11 @@ class TodoView extends StatelessWidget {
     final todoCubit = context.read<TodoCubit>();
 
     return Scaffold(
+      appBar: AppBar(
+        title: const Text('Todo App', style: TextStyle(color: Colors.white)),
+        centerTitle: true,
+        backgroundColor: Colors.teal,
+      ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add),
         onPressed: () => _showAddTodoBox(context),
